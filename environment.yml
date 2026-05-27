@@ -1,0 +1,24 @@
+# Conda environment for the MAVRL camera-ready release.
+#
+# This pins only Python; all other dependencies (PyTorch, stable-baselines3,
+# matplotlib, optuna, …) come from pip via requirements.txt because the
+# upstream project is pip-managed.
+#
+# Usage:
+#   conda env create -f environment.yml
+#   conda activate mavrl-env
+#   pip install -e .       # editable install of the `mavrl` package
+#
+# Linux/macOS x86_64 and Apple Silicon (arm64) are both supported.
+# See README ("Reproducing the paper") for the bit-exact reproduction
+# caveat across BLAS backends.
+
+name: mavrl-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.txt

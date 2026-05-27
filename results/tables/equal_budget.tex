@@ -1,0 +1,30 @@
+% Requires: \usepackage[table]{xcolor}
+% Requires: \usepackage{makecell}  % stacked mean/SE cells
+\begin{table*}[htbp]
+\centering
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.8}
+\renewcommand{\cellset}{\renewcommand{\arraystretch}{0.45}}
+\caption{Equal-budget table: normalized performance + EPIC distance.}
+\label{tab:equal_budget_combined}
+\begin{tabular}{lrrrr|rrrrrr|r}
+\toprule
+ & \multicolumn{1}{c}{\makecell{\fbPref}} & \multicolumn{1}{c}{\makecell{\fbDemo}} & \multicolumn{1}{c}{\makecell{\fbRating}} & \multicolumn{1}{c|}{\makecell{\fbStop}} & \multicolumn{1}{c}{\makecell{\fbDemoPref}} & \multicolumn{1}{c}{\makecell{\fbPrefRating}} & \multicolumn{1}{c}{\makecell{\fbPrefStop}} & \multicolumn{1}{c}{\makecell{\fbDemoRating}} & \multicolumn{1}{c}{\makecell{\fbDemoStop}} & \multicolumn{1}{c|}{\makecell{\fbRatingStop}} & \multicolumn{1}{c}{\makecell{\fbPDRS}} \\
+\midrule
+\multicolumn{12}{c}{\makecell{\textit{Performance (normalized return)}~$\uparrow$}} \\
+\midrule
+\gridcliff & \makecell[r]{59.0\\{\tiny$\pm$10.4}} & \makecell[r]{45.4\\{\tiny$\pm$9.5}} & \makecell[r]{61.6\\{\tiny$\pm$11.6}} & \makecell[r]{16.9\\{\tiny$\pm$6.6}} & \cellcolor[gray]{0.92}\makecell[r]{67.5\\{\tiny$\pm$10.2}} & \makecell[r]{64.9\\{\tiny$\pm$11.1}} & \makecell[r]{45.8\\{\tiny$\pm$11.7}} & \cellcolor[gray]{0.82}\makecell[r]{99.1\\{\tiny$\pm$0.4}} & \makecell[r]{33.6\\{\tiny$\pm$8.2}} & \makecell[r]{41.2\\{\tiny$\pm$12.1}} & \makecell[r]{61.9\\{\tiny$\pm$12.2}} \\
+\gridsparse & \cellcolor[gray]{0.92}\makecell[r]{70.0\\{\tiny$\pm$10.5}} & \makecell[r]{60.7\\{\tiny$\pm$11.0}} & \makecell[r]{64.7\\{\tiny$\pm$12.0}} & \makecell[r]{15.0\\{\tiny$\pm$8.2}} & \makecell[r]{60.0\\{\tiny$\pm$11.2}} & \makecell[r]{58.8\\{\tiny$\pm$12.3}} & \makecell[r]{15.0\\{\tiny$\pm$8.2}} & \cellcolor[gray]{0.82}\makecell[r]{88.2\\{\tiny$\pm$8.1}} & \makecell[r]{60.0\\{\tiny$\pm$11.2}} & \makecell[r]{58.8\\{\tiny$\pm$12.3}} & \makecell[r]{52.9\\{\tiny$\pm$12.5}} \\
+\gridtrap & \cellcolor[gray]{0.92}\makecell[r]{74.5\\{\tiny$\pm$6.1}} & \makecell[r]{45.0\\{\tiny$\pm$1.1}} & \makecell[r]{59.2\\{\tiny$\pm$5.0}} & \makecell[r]{41.7\\{\tiny$\pm$3.0}} & \makecell[r]{55.9\\{\tiny$\pm$5.1}} & \cellcolor[gray]{0.82}\makecell[r]{75.5\\{\tiny$\pm$6.9}} & \makecell[r]{69.8\\{\tiny$\pm$5.8}} & \makecell[r]{55.5\\{\tiny$\pm$5.2}} & \makecell[r]{41.3\\{\tiny$\pm$3.4}} & \makecell[r]{64.1\\{\tiny$\pm$7.1}} & \makecell[r]{46.3\\{\tiny$\pm$0.2}} \\
+\acrobot & \makecell[r]{98.3\\{\tiny$\pm$0.9}} & \cellcolor[gray]{0.92}\makecell[r]{99.6\\{\tiny$\pm$0.3}} & \cellcolor[gray]{0.82}\makecell[r]{99.8\\{\tiny$\pm$0.1}} & \cellcolor[gray]{0.82}\makecell[r]{99.8\\{\tiny$\pm$0.2}} & \cellcolor[gray]{0.92}\makecell[r]{99.6\\{\tiny$\pm$0.1}} & \makecell[r]{97.5\\{\tiny$\pm$0.7}} & \makecell[r]{98.4\\{\tiny$\pm$0.6}} & \makecell[r]{99.2\\{\tiny$\pm$0.2}} & \cellcolor[gray]{0.82}\makecell[r]{99.8\\{\tiny$\pm$0.2}} & \cellcolor[gray]{0.92}\makecell[r]{99.6\\{\tiny$\pm$0.1}} & \cellcolor[gray]{0.82}\makecell[r]{99.8\\{\tiny$\pm$0.1}} \\
+\cartpole & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.92}\makecell[r]{97.8\\{\tiny$\pm$1.3}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} & \cellcolor[gray]{0.82}\makecell[r]{100.0\\{\tiny$\pm$0.0}} \\
+\lander & \makecell[r]{47.5\\{\tiny$\pm$4.8}} & \cellcolor[gray]{0.82}\makecell[r]{115.7\\{\tiny$\pm$0.2}} & \makecell[r]{56.6\\{\tiny$\pm$10.2}} & \makecell[r]{69.3\\{\tiny$\pm$4.8}} & \makecell[r]{94.0\\{\tiny$\pm$13.4}} & \makecell[r]{41.2\\{\tiny$\pm$14.2}} & \makecell[r]{66.1\\{\tiny$\pm$5.7}} & \makecell[r]{101.4\\{\tiny$\pm$4.3}} & \makecell[r]{90.1\\{\tiny$\pm$5.3}} & \makecell[r]{51.4\\{\tiny$\pm$11.1}} & \cellcolor[gray]{0.92}\makecell[r]{112.4\\{\tiny$\pm$2.0}} \\
+\midrule
+\multicolumn{12}{c}{\makecell{\textit{EPIC distance}~$\downarrow$}} \\
+\midrule
+\gridcliff & \makecell[r]{0.612\\{\tiny$\pm$0.018}} & \makecell[r]{0.660\\{\tiny$\pm$0.023}} & \makecell[r]{0.617\\{\tiny$\pm$0.012}} & \makecell[r]{0.705\\{\tiny$\pm$0.007}} & \makecell[r]{0.620\\{\tiny$\pm$0.023}} & \cellcolor[gray]{0.92}\makecell[r]{0.604\\{\tiny$\pm$0.014}} & \makecell[r]{0.625\\{\tiny$\pm$0.019}} & \cellcolor[gray]{0.82}\makecell[r]{0.591\\{\tiny$\pm$0.006}} & \makecell[r]{0.684\\{\tiny$\pm$0.007}} & \makecell[r]{0.630\\{\tiny$\pm$0.015}} & \makecell[r]{0.631\\{\tiny$\pm$0.018}} \\
+\gridsparse & \cellcolor[gray]{0.82}\makecell[r]{0.424\\{\tiny$\pm$0.048}} & \makecell[r]{0.558\\{\tiny$\pm$0.023}} & \makecell[r]{0.475\\{\tiny$\pm$0.047}} & \makecell[r]{0.698\\{\tiny$\pm$0.017}} & \cellcolor[gray]{0.92}\makecell[r]{0.465\\{\tiny$\pm$0.071}} & \makecell[r]{0.555\\{\tiny$\pm$0.039}} & \makecell[r]{0.660\\{\tiny$\pm$0.014}} & \makecell[r]{0.519\\{\tiny$\pm$0.009}} & \makecell[r]{0.578\\{\tiny$\pm$0.039}} & \makecell[r]{0.510\\{\tiny$\pm$0.048}} & \makecell[r]{0.565\\{\tiny$\pm$0.042}} \\
+\gridtrap & \makecell[r]{0.633\\{\tiny$\pm$0.006}} & \makecell[r]{0.705\\{\tiny$\pm$0.003}} & \cellcolor[gray]{0.92}\makecell[r]{0.577\\{\tiny$\pm$0.008}} & \makecell[r]{0.720\\{\tiny$\pm$0.003}} & \makecell[r]{0.584\\{\tiny$\pm$0.013}} & \makecell[r]{0.633\\{\tiny$\pm$0.005}} & \makecell[r]{0.606\\{\tiny$\pm$0.006}} & \makecell[r]{0.607\\{\tiny$\pm$0.010}} & \makecell[r]{0.706\\{\tiny$\pm$0.007}} & \makecell[r]{0.590\\{\tiny$\pm$0.011}} & \cellcolor[gray]{0.82}\makecell[r]{0.478\\{\tiny$\pm$0.015}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

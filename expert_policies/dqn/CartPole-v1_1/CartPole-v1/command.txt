@@ -1,0 +1,1 @@
+/Users/raphaelbaur/miniconda3/envs/mavrl/bin/python3.11 /Users/raphaelbaur/miniconda3/envs/mavrl/bin/rl_zoo3 train --algo dqn --env CartPole-v1

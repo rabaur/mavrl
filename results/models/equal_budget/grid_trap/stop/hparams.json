@@ -1,0 +1,65 @@
+{
+  "env_id": "grid_trap",
+  "grid_size": 10,
+  "subsample_factor": 1,
+  "step_offset": 1,
+  "obs_transform": "one_hot",
+  "act_transform": "one_hot",
+  "reward_domain": "s",
+  "num_epochs": 301,
+  "gamma": 0.95,
+  "use_imitation_learning": false,
+  "retrain_verbose": 0,
+  "retrain_pbar": false,
+  "log_every_n_steps": 1000000,
+  "val_every_n_epochs": 50,
+  "vis_every_n_epochs": null,
+  "n_stop_episodes": 256,
+  "stop_seg_len": 10,
+  "stop_regret_percentile": 50.0,
+  "stop_regret_discount": 0.1,
+  "stop_c": 2.0,
+  "stop_trajectory_rationality": 0.0,
+  "td_error_weight": 0.6703365293882213,
+  "kl_weight": 0.014596265506236588,
+  "encoder_hidden_sizes": [
+    32,
+    32
+  ],
+  "lr": 6.763880524699504e-05,
+  "batch_size": 128,
+  "use_importance_weights": true,
+  "n_pref_samples": 0,
+  "n_demo_samples": 0,
+  "n_rating_samples": 0,
+  "n_stop_samples": 64,
+  "_meta": {
+    "best_trial_number": 479,
+    "best_trial_value": -0.6361387010811289,
+    "per_seed_values": [
+      -3.095123749999999,
+      0.0,
+      4.0079051188968155e-16,
+      0.0,
+      0.0,
+      0.0,
+      1.6031620475587258e-15,
+      0.0,
+      0.0,
+      -5.174679364054684,
+      0.0,
+      5.61106716645554e-15,
+      0.0
+    ],
+    "sample_counts": {
+      "n_pref_samples": 0,
+      "n_demo_samples": 0,
+      "n_rating_samples": 0,
+      "n_stop_samples": 64
+    },
+    "subset": "stop",
+    "active_modalities": [
+      "stop"
+    ]
+  }
+}

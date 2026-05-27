@@ -1,0 +1,1 @@
+python train.py --env Acrobot-v1 --algo dqn --hyperparams env_wrapper:{"mavrl.envs.wrappers.acrobot_transfer_env.AcrobotTransferEnv": {"asymmetry": 1.0}} --run-suffix _asymmetry_1.0 --seed 46

@@ -1,0 +1,1 @@
+python -m rl_zoo3.train --algo ppo --env LunarLander-v3 --env-kwargs enable_wind:True wind_power:10.0 --log-folder expert_policies/ppo/LunarLander-v3/wind_power_10.0

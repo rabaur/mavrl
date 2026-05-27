@@ -1,0 +1,30 @@
+% Requires: \usepackage[table]{xcolor}
+% Requires: \usepackage{makecell}  % stacked mean/SE cells
+\begin{table*}[htbp]
+\centering
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.8}
+\renewcommand{\cellset}{\renewcommand{\arraystretch}{0.45}}
+\caption{Fixed-allocation table (paper): normalized performance + EPIC distance.}
+\label{tab:fixed_allocation_combined_paper}
+\begin{tabular}{lrrrr|rrrrrr|r}
+\toprule
+ & \multicolumn{1}{c}{\makecell{\fbPref}} & \multicolumn{1}{c}{\makecell{\fbDemo}} & \multicolumn{1}{c}{\makecell{\fbRating}} & \multicolumn{1}{c|}{\makecell{\fbStop}} & \multicolumn{1}{c}{\makecell{\fbDemoPref}} & \multicolumn{1}{c}{\makecell{\fbPrefRating}} & \multicolumn{1}{c}{\makecell{\fbPrefStop}} & \multicolumn{1}{c}{\makecell{\fbDemoRating}} & \multicolumn{1}{c}{\makecell{\fbDemoStop}} & \multicolumn{1}{c|}{\makecell{\fbRatingStop}} & \multicolumn{1}{c}{\makecell{\fbPDRS}} \\
+\midrule
+\multicolumn{12}{c}{\makecell{\textit{Performance (normalized return)}~$\uparrow$}} \\
+\midrule
+\gridcliff & 59.2 & 80.4 & 41.1 & 84.1 & 80.1 & 91.9 & 77.0 & \cellcolor[gray]{0.92}99.7 & 99.2 & 72.1 & \cellcolor[gray]{0.82}100.0 \\
+\gridsparse & 80.0 & \cellcolor[gray]{0.92}95.0 & 58.8 & 90.0 & 90.0 & 82.3 & 85.0 & 94.1 & \cellcolor[gray]{0.82}100.0 & 70.6 & \cellcolor[gray]{0.82}100.0 \\
+\gridtrap & 78.3 & 46.5 & 60.4 & 46.1 & 77.1 & \cellcolor[gray]{0.92}90.0 & 86.2 & 82.0 & 84.9 & 64.1 & \cellcolor[gray]{0.82}95.3 \\
+\acrobot & 74.4 & \cellcolor[gray]{0.92}99.7 & 99.2 & 99.5 & 99.0 & 84.3 & 92.4 & 98.9 & \cellcolor[gray]{0.82}99.9 & 98.3 & 97.9 \\
+\cartpole & 92.2 & \cellcolor[gray]{0.92}97.4 & \cellcolor[gray]{0.82}100.0 & 96.5 & \cellcolor[gray]{0.82}100.0 & \cellcolor[gray]{0.82}100.0 & 95.5 & \cellcolor[gray]{0.82}100.0 & \cellcolor[gray]{0.82}100.0 & \cellcolor[gray]{0.82}100.0 & \cellcolor[gray]{0.82}100.0 \\
+\lander & 47.5 & \cellcolor[gray]{0.82}115.7 & 56.6 & 69.3 & 75.6 & 73.3 & 53.2 & \cellcolor[gray]{0.92}105.6 & 104.5 & 64.0 & 93.5 \\
+\midrule
+\multicolumn{12}{c}{\makecell{\textit{EPIC distance}~$\downarrow$}} \\
+\midrule
+\gridcliff & 0.614 & 0.651 & 0.593 & 0.593 & \cellcolor[gray]{0.92}0.533 & 0.553 & 0.606 & 0.588 & 0.626 & 0.638 & \cellcolor[gray]{0.82}0.481 \\
+\gridsparse & 0.445 & 0.456 & 0.470 & 0.413 & 0.453 & \cellcolor[gray]{0.82}0.380 & 0.423 & 0.520 & 0.442 & 0.427 & \cellcolor[gray]{0.92}0.383 \\
+\gridtrap & 0.627 & 0.708 & 0.622 & 0.719 & 0.562 & 0.585 & 0.532 & 0.609 & 0.608 & \cellcolor[gray]{0.92}0.522 & \cellcolor[gray]{0.82}0.520 \\
+\bottomrule
+\end{tabular}
+\end{table*}

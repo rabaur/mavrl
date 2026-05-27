@@ -1,0 +1,166 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+
+# -----------------------------
+# Jupyter / IPython
+# -----------------------------
+.ipynb_checkpoints/
+.profile_default/
+ipython_config.py
+
+# -----------------------------
+# Logs / Outputs
+# -----------------------------
+*.log
+*.out
+*.err
+logs/
+*.bak
+*.swp
+.DS_Store
+
+# -----------------------------
+# Data / Models / Results
+# -----------------------------
+./data/
+./datasets/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.json
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.db
+*.sqlite
+*.zip
+*.tar
+*.gz
+*.pkl
+*.pickle
+*.joblib
+outputs/
+results/
+checkpoints/
+models/
+artifacts/
+dataset_cache/
+dataset_cache_old/
+figures/
+
+# -----------------------------
+# IDE / Editor / OS
+# -----------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+.DS_Store
+
+# -----------------------------
+# Testing / Coverage
+# -----------------------------
+.coverage
+*.cover
+coverage.xml
+htmlcov/
+.cache/
+.pytest_cache/
+.tox/
+nosetests.xml
+
+# -----------------------------
+# Environment / Dependency Managers
+# -----------------------------
+Pipfile.lock
+poetry.lock
+*.yaml.lock
+*.toml.lock
+.conda/
+*.conda
+*.yml
+*.env
+*.ini
+
+# -----------------------------
+# Notebooks / Reports
+# -----------------------------
+reports/
+*.nbconvert.ipynb
+
+# -----------------------------
+# wandb logs
+# -----------------------------
+wandb
+
+# -----------------------------
+# Experiment config queues
+# -----------------------------
+/experiments
+mavrl-misspec
+
+# -----------------------------
+# Unignore experiment policy models and hyperparameters
+# -----------------------------
+!expert_policies/**/best_model.zip
+!hyperparams/**.yml
+
+# -----------------------------
+# Unignore release artifacts
+# -----------------------------
+# Whole-tree unignore for the canonical model bundle (per-cell hparams.json,
+# r_model_seed*.pt, and MCMC JSON outputs from FeedbackInformativeness).
+!results/
+!results/**
+results/**/.DS_Store
+
+# Public release env file.
+!environment.yml
+
+# -----------------------------
+# Julia specific
+# -----------------------------
+FeedbackInformativeness/Manifest.toml
+!FeedbackInformativeness/src/models
+
+# -----------------------------
+# AI Coding tools
+# -----------------------------
+.cursor/
+.claude/
+CLAUDE.md
+
+# -----------------------------
+# Camera-ready cleanup staging
+# -----------------------------
+# Files moved out of the working tree during the camera-ready cleanup live
+# here. Never commit. Audit + `rm -rf _to_delete/` once main's untracked
+# state has been reconciled.
+_to_delete/
+results/flat.tex

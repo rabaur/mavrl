@@ -1,0 +1,62 @@
+{
+  "grid_cliff": {
+    "env_id": "grid_cliff",
+    "grid_size": 10,
+    "gamma": 0.95,
+    "p_rand": 0.0,
+    "optimal_regret": -1.8396040747603593e-05,
+    "optimal_discounted_value": 31.77714547665743,
+    "uniform_regret": 36.231534617735875,
+    "uniform_discounted_value": -4.454407537119193
+  },
+  "grid_sparse": {
+    "env_id": "grid_sparse",
+    "grid_size": 10,
+    "gamma": 0.95,
+    "p_rand": 0.0,
+    "optimal_regret": -1.8370755996421906e-05,
+    "optimal_discounted_value": 6.7387150060807945,
+    "uniform_regret": 8.733621352450122,
+    "uniform_discounted_value": -1.9949247171253233
+  },
+  "grid_trap": {
+    "env_id": "grid_trap",
+    "grid_size": 10,
+    "gamma": 0.95,
+    "p_rand": 0.0,
+    "optimal_regret": -1.8370755998198263e-05,
+    "optimal_discounted_value": 7.944286369164358,
+    "uniform_regret": 14.729520740014909,
+    "uniform_discounted_value": -6.7852527416065485
+  },
+  "CartPole-v1": {
+    "env_id": "CartPole-v1",
+    "optimal_policy_path": "expert_policies/dqn/CartPole-v1_1/best_model.zip",
+    "num_samples": 1000,
+    "max_num_steps": 500,
+    "optimal_mean_return": 500,
+    "optimal_std_return": 2.5935841995200386,
+    "uniform_mean_return": 21.878,
+    "uniform_std_return": 11.3152603151673
+  },
+  "Acrobot-v1": {
+    "env_id": "Acrobot-v1",
+    "optimal_policy_path": "expert_policies/dqn/Acrobot-v1_1/best_model.zip",
+    "num_samples": 1000,
+    "max_num_steps": 500,
+    "optimal_mean_return": -82.44,
+    "optimal_std_return": 12.616988547193026,
+    "uniform_mean_return": -498.609,
+    "uniform_std_return": 14.298465616981424
+  },
+  "LunarLander-v3": {
+    "env_id": "LunarLander-v3",
+    "optimal_policy_path": "expert_policies/dqn/LunarLander-v3_1/best_model.zip",
+    "num_samples": 1000,
+    "max_num_steps": 1000,
+    "optimal_mean_return": 200,
+    "optimal_std_return": 135.96542698302832,
+    "uniform_mean_return": -183.20032680541934,
+    "uniform_std_return": 108.37428225214597
+  }
+}

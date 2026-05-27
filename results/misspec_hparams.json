@@ -1,0 +1,323 @@
+{
+  "grid_cliff": {
+    "pref": {
+      "study_name": "grid_cliff_pref_fixed_paper",
+      "trial_number": 360,
+      "value": 17.008417263552456,
+      "td_error_weight": 1.8075677148335443,
+      "kl_weight": 0.00210597893967414,
+      "lr": 0.0009071421985388394,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        16,
+        16
+      ],
+      "use_importance_weights": true,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "demo": {
+      "study_name": "grid_cliff_demo_fixed_paper",
+      "trial_number": 143,
+      "value": 24.675419685502167,
+      "td_error_weight": 0.08811483234271723,
+      "kl_weight": 0.1515548318224548,
+      "lr": 0.0009928705800643814,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 1,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "rating": {
+      "study_name": "grid_cliff_rating_fixed_paper",
+      "trial_number": 301,
+      "value": 10.435023303746537,
+      "td_error_weight": 0.0059500293764470965,
+      "kl_weight": 0.6196955887988915,
+      "lr": 0.000943592275073047,
+      "batch_size": 128,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 64,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "stop": {
+      "study_name": "grid_cliff_stop_fixed_paper",
+      "trial_number": 126,
+      "value": 26.02483347766771,
+      "td_error_weight": 0.5788506607404509,
+      "kl_weight": 1.142053578752294,
+      "lr": 0.0009285547014175282,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 216
+    },
+    "pdrs": {
+      "study_name": "grid_cliff_pdrs_fixed_paper",
+      "trial_number": 187,
+      "value": 31.777145476657434,
+      "td_error_weight": 0.4251596263039525,
+      "kl_weight": 0.001920314588822063,
+      "lr": 0.0005419379420609587,
+      "batch_size": 128,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 1,
+        "n_rating_samples": 64,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 203
+    }
+  },
+  "grid_sparse": {
+    "pref": {
+      "study_name": "grid_sparse_pref_fixed_paper",
+      "trial_number": 330,
+      "value": 4.990972004864636,
+      "td_error_weight": 0.7644381570335176,
+      "kl_weight": 0.005256848369853853,
+      "lr": 0.0008364644639330206,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 487
+    },
+    "demo": {
+      "study_name": "grid_sparse_demo_fixed_paper",
+      "trial_number": 93,
+      "value": 6.301779255776756,
+      "td_error_weight": 0.010604562273200639,
+      "kl_weight": 0.07141195816305047,
+      "lr": 0.0009420041035474541,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": true,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 1,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "rating": {
+      "study_name": "grid_sparse_rating_fixed_paper",
+      "trial_number": 129,
+      "value": 3.140420591812234,
+      "td_error_weight": 0.42428393101958206,
+      "kl_weight": 0.022162067685490533,
+      "lr": 0.0008810229572733522,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": true,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 64,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "stop": {
+      "study_name": "grid_sparse_stop_fixed_paper",
+      "trial_number": 154,
+      "value": 5.864843505472716,
+      "td_error_weight": 1.7994109400091702,
+      "kl_weight": 1.8553605621463178,
+      "lr": 0.0008763177695399582,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": true,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 218
+    },
+    "pdrs": {
+      "study_name": "grid_sparse_pdrs_fixed_paper",
+      "trial_number": 41,
+      "value": 6.738715006080796,
+      "td_error_weight": 1.156622857145613,
+      "kl_weight": 0.835012675927059,
+      "lr": 0.0002674292960878869,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 1,
+        "n_rating_samples": 64,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 138
+    }
+  },
+  "grid_trap": {
+    "pref": {
+      "study_name": "grid_trap_pref_fixed_paper",
+      "trial_number": 425,
+      "value": 4.748948888403598,
+      "td_error_weight": 0.7059125491318505,
+      "kl_weight": 0.02243229972302037,
+      "lr": 0.0007271762222774227,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 436
+    },
+    "demo": {
+      "study_name": "grid_trap_demo_fixed_paper",
+      "trial_number": 226,
+      "value": 0.06658245074441335,
+      "td_error_weight": 0.2664833067183225,
+      "kl_weight": 0.010889697808917468,
+      "lr": 0.0003951680564463539,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        32,
+        32
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 1,
+        "n_rating_samples": 0,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 500
+    },
+    "rating": {
+      "study_name": "grid_trap_rating_fixed_paper",
+      "trial_number": 226,
+      "value": 2.1115772618802757,
+      "td_error_weight": 1.799736782370802,
+      "kl_weight": 1.964442996551075,
+      "lr": 0.0008873401262030753,
+      "batch_size": 16,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 64,
+        "n_stop_samples": 0
+      },
+      "n_completed_trials": 378
+    },
+    "stop": {
+      "study_name": "grid_trap_stop_fixed_paper",
+      "trial_number": 238,
+      "value": 3.08300393761294e-17,
+      "td_error_weight": 0.3541615269093402,
+      "kl_weight": 0.01892804523935436,
+      "lr": 1.0855178819313547e-05,
+      "batch_size": 32,
+      "encoder_hidden_sizes": [
+        32,
+        32
+      ],
+      "use_importance_weights": true,
+      "sample_counts": {
+        "n_pref_samples": 0,
+        "n_demo_samples": 0,
+        "n_rating_samples": 0,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 335
+    },
+    "pdrs": {
+      "study_name": "grid_trap_pdrs_fixed_paper",
+      "trial_number": 126,
+      "value": 7.25813147336189,
+      "td_error_weight": 0.3964090969493155,
+      "kl_weight": 0.007698521591629533,
+      "lr": 0.00020903311213465154,
+      "batch_size": 64,
+      "encoder_hidden_sizes": [
+        64,
+        64
+      ],
+      "use_importance_weights": false,
+      "sample_counts": {
+        "n_pref_samples": 64,
+        "n_demo_samples": 1,
+        "n_rating_samples": 64,
+        "n_stop_samples": 256
+      },
+      "n_completed_trials": 129
+    }
+  }
+}

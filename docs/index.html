@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAVRL: Learning Reward Functions from Multiple Feedback Types</title>
+  <meta name="description" content="MAVRL learns reward functions from multiple human feedback types — preferences, demonstrations, ratings, and stops — using amortized variational inference. ICML 2026.">
+  <meta name="keywords" content="reward learning, variational inference, human feedback, RLHF, inverse reinforcement learning, ICML 2026">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+<!-- Hero / Title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <img src="static/images/mavrl_color.png" alt="MAVRL" class="logo-img">
+      <h1 class="publication-title">
+        Learning Reward Functions from Multiple Feedback Types<br>with Amortized Variational Inference
+      </h1>
+
+      <div class="publication-authors">
+        <span class="author-block">
+          <a href="https://raphaelbaur.com" target="_blank">Rapha&euml;l Baur</a><sup>1,2</sup>,
+        </span>
+        <span class="author-block">
+          <a href="https://www.yannickmetz.me" target="_blank">Yannick Metz</a><sup>2</sup>,
+        </span>
+        <span class="author-block">
+          <a href="#" target="_blank">Maria Gkoulta</a><sup>2</sup>,
+        </span>
+        <span class="author-block">
+          <a href="https://el-assady.com" target="_blank">Mennatallah El-Assady</a><sup>1,2</sup>,
+        </span>
+        <br>
+        <span class="author-block">
+          <a href="https://sites.google.com/view/alpi-lab/giorgia-ramponi" target="_blank">Giorgia Ramponi</a><sup>3</sup>,
+        </span>
+        <span class="author-block">
+          <a href="https://thomasklbg.github.io" target="_blank">Thomas Kleine Buening</a><sup>1,2</sup>
+        </span>
+      </div>
+
+      <div class="publication-affiliations">
+        <sup>1</sup>ETH AI Center&ensp;
+        <sup>2</sup>Department of Computer Science, ETH Zurich&ensp;
+        <sup>3</sup>Department of Informatics, University of Zurich
+      </div>
+
+      <div class="publication-affiliations" style="margin-top: 0.3rem; font-weight: 500;">
+        ICML 2026
+      </div>
+
+      <div class="publication-links">
+        <a class="button is-rounded is-outlined" href="#" target="_blank">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span>
+          <span>Paper</span>
+        </a>
+        <a class="button is-rounded is-outlined" href="https://github.com/rabaur/mavrl" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>Code</span>
+        </a>
+        <a class="button is-rounded is-outlined" href="https://pypi.org/project/mavrl/" target="_blank">
+          <span class="icon"><i class="fab fa-python"></i></span>
+          <span>PyPI</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Figure -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <img src="static/images/mavrl_visual-abstract.jpg" alt="MAVRL architecture: a shared reward encoder processes multi-type feedback through feedback-specific decoders, trained via a single ELBO objective." class="teaser-image" style="width: 100%;">
+      <p class="figure-caption">
+        <strong>MAVRL</strong> learns a shared probabilistic reward encoder from heterogeneous feedback types.
+        Each feedback modality &mdash; preferences, demonstrations, ratings, and stops &mdash; contributes through a dedicated likelihood decoder.
+        The entire model is trained end-to-end by optimizing a single evidence lower bound (ELBO).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content">
+      <p>
+        Reward learning typically relies on a single feedback type or combines multiple feedback types using manually weighted loss terms. Currently, it remains unclear how to jointly learn reward functions from heterogeneous feedback types &mdash; such as demonstrations, comparisons, ratings, and stops &mdash; that provide qualitatively different signals.
+      </p>
+      <p>
+        We address this challenge by formulating reward learning from multiple feedback types as <strong>Bayesian inference over a shared latent reward function</strong>, where each feedback type contributes information through an explicit likelihood. We introduce a scalable amortized variational inference approach that learns a shared reward encoder and feedback-specific likelihood decoders, trained by optimizing a single evidence lower bound.
+      </p>
+      <p>
+        Our approach avoids reducing feedback to a common intermediate representation and eliminates the need for manual loss balancing. Across discrete and continuous-control benchmarks, we show that jointly inferred reward posteriors outperform single-type baselines, exploit complementary information across feedback types, and yield policies that are <strong>more robust to environment perturbations</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr style="max-width: 860px; margin: 0 auto; border-top: 1px solid #e0e0e0;">
+
+<!-- Key Insight 1: Complementary feedback -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Feedback Types Complement Each Other</h2>
+    <div class="content">
+      <p>
+        Each feedback type induces a characteristic pattern in the inferred reward and uncertainty.
+        <strong>Demonstrations</strong>&thinsp;<img src="static/images/demo_only.png" alt="demo" class="fb-icon"> yield low-uncertainty estimates along expert trajectories but leave large regions underdetermined.
+        <strong>Preferences</strong>&thinsp;<img src="static/images/pref_only.png" alt="pref" class="fb-icon"> provide broader coverage but can over-reward frequently visited states.
+        <strong>Ratings</strong>&thinsp;<img src="static/images/rating_only.png" alt="rating" class="fb-icon"> reliably identify goals but offer limited landscape information.
+        <strong>Stops</strong>&thinsp;<img src="static/images/stop_only.png" alt="stop" class="fb-icon"> strongly constrain unsafe regions while providing little guidance on desirable behavior.
+      </p>
+    </div>
+    <div class="has-text-centered">
+      <a href="static/images/MAVRL_captioned_cropped.png" target="_blank">
+        <img src="static/images/MAVRL_captioned_cropped.png" alt="Qualitative comparison of reward estimates from individual feedback types and their combination." class="insight-figure" style="width: 100%;">
+      </a>
+      <p class="figure-caption">
+        Reward estimates (color) and uncertainty (cell size) inferred from individual feedback types and their combination on a 10&times;10 grid environment.
+        Combining all four modalities recovers the ground-truth reward with high fidelity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr style="max-width: 860px; margin: 0 auto; border-top: 1px solid #e0e0e0;">
+
+<!-- Key Insight 2: Performance gains -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Combining Feedback Improves Performance</h2>
+    <div class="content">
+      <p>
+        Across six environments spanning tabular grid worlds and continuous-control tasks, combining all four feedback types with MAVRL consistently achieves the strongest overall performance. No single feedback type dominates across all settings.
+      </p>
+    </div>
+    <div class="highlight-box">
+      <ul>
+        <li>
+          <strong>All four modalities combined</strong> achieves <span class="key-number">100%</span> normalized return in 3 of 6 environments and is the best or second-best method in 4 of 6.
+        </li>
+        <li>
+          MAVRL matches MCMC posterior inference quality at <span class="key-number">~30&times;</span> lower compute on grid environments, and scales to continuous-control tasks where MCMC is intractable.
+        </li>
+        <li>
+          Post-hoc reward averaging (training separate models per feedback type and ensembling) substantially underperforms joint inference, confirming that <strong>independent models miss cross-modal complementarity</strong>.
+        </li>
+        <li>
+          Equal-budget ablations confirm that performance gains reflect <strong>genuine complementarity</strong>, not simply more data.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr style="max-width: 860px; margin: 0 auto; border-top: 1px solid #e0e0e0;">
+
+<!-- Key Insight 3: Robustness -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Multi-Type Feedback Is More Robust</h2>
+    <div class="content">
+      <p>
+        Reward functions learned from multiple feedback types degrade more gracefully when the environment changes at deployment. Under dynamics perturbations &mdash; increased stochasticity, altered physics, stronger wind &mdash; policies trained on multi-type rewards are generally more stable, outperforming single-feedback baselines in the grid environments and remaining competitive in continuous-control tasks.
+      </p>
+    </div>
+    <div class="has-text-centered">
+      <a href="static/images/transfer_combined.png" target="_blank">
+        <img src="static/images/transfer_combined.png" alt="Robustness under dynamics perturbations across four environments." class="insight-figure" style="width: 100%;">
+      </a>
+      <p class="figure-caption">
+        Normalized returns under increasing dynamics perturbations across four environments.
+        Multi-type feedback (PDRS, bold) consistently degrades more gracefully than single-type baselines and imitation.
+      </p>
+    </div>
+    <div class="content" style="margin-top: 1.5rem;">
+      <p>
+        MAVRL is also resilient to <strong>feedback misspecification</strong>: when one feedback channel is corrupted (e.g., noisier preferences or miscalibrated ratings), the remaining modalities compensate. In 3 of 4 corruption scenarios, MAVRL retains <span class="key-number">&ge;90%</span> of its well-specified performance, while single-modality baselines collapse.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr style="max-width: 860px; margin: 0 auto; border-top: 1px solid #e0e0e0;">
+
+<!-- BibTeX -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Citation</h2>
+    <div class="bibtex-block" id="bibtex"><button class="bibtex-copy-btn" onclick="copyBibtex()"><i class="fas fa-copy"></i> Copy</button>
+@inproceedings{baur2026mavrl,
+  title={MAVRL: Learning Reward Functions from Multiple Feedback
+         Types with Amortized Variational Inference},
+  author={Baur, Rapha{\"e}l and Metz, Yannick and Gkoulta, Maria
+          and El-Assady, Mennatallah and Ramponi, Giorgia
+          and Kleine Buening, Thomas},
+  booktitle={International Conference on Machine Learning (ICML)},
+  year={2026},
+}</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p>
+        This research was supported by the ETH AI Center.
+        Website template inspired by <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyBibtex() {
+  const bibtex = document.getElementById('bibtex').innerText
+    .replace('Copy', '').trim();
+  navigator.clipboard.writeText(bibtex).then(function() {
+    const btn = document.querySelector('.bibtex-copy-btn');
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(function() {
+      btn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

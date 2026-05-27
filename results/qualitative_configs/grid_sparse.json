@@ -1,0 +1,45 @@
+{
+  "env_id": "grid_sparse",
+  "no_minigrid_background": true,
+  "grid_size": 10,
+  "gamma": 0.99,
+  "include_ground_truth": true,
+  "runs": [
+    {
+      "name": "Demonstrations",
+      "dir": "results/models/qualitative/grid_sparse/demo",
+      "epochs": [
+        499
+      ]
+    },
+    {
+      "name": "Preferences",
+      "dir": "results/models/qualitative/grid_sparse/pref",
+      "epochs": [
+        399
+      ]
+    },
+    {
+      "name": "Ratings",
+      "dir": "results/models/qualitative/grid_sparse/rating",
+      "epochs": [
+        399
+      ]
+    },
+    {
+      "name": "Stops",
+      "dir": "results/models/qualitative/grid_sparse/stop",
+      "epochs": [
+        399
+      ]
+    },
+    {
+      "name": "Combined",
+      "dir": "results/models/qualitative/grid_sparse/pdrs",
+      "epochs": [
+        499
+      ]
+    }
+  ],
+  "output": "results/figures/appendix_grids/final-fig_grid-sparse.png"
+}

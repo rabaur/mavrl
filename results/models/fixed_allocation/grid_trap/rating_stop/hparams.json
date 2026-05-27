@@ -1,0 +1,69 @@
+{
+  "env_id": "grid_trap",
+  "grid_size": 10,
+  "subsample_factor": 1,
+  "step_offset": 1,
+  "obs_transform": "one_hot",
+  "act_transform": "one_hot",
+  "reward_domain": "s",
+  "num_epochs": 301,
+  "gamma": 0.95,
+  "use_imitation_learning": false,
+  "retrain_verbose": 0,
+  "retrain_pbar": false,
+  "log_every_n_steps": 1000000,
+  "val_every_n_epochs": 50,
+  "vis_every_n_epochs": null,
+  "n_rating_episodes": 256,
+  "rating_seg_len": 10,
+  "rating_trajectory_rationality": 0.0,
+  "n_stop_episodes": 256,
+  "stop_seg_len": 10,
+  "stop_regret_percentile": 50.0,
+  "stop_regret_discount": 0.1,
+  "stop_c": 2.0,
+  "stop_trajectory_rationality": 0.0,
+  "td_error_weight": 0.22159662941456543,
+  "kl_weight": 0.16374739687418138,
+  "encoder_hidden_sizes": [
+    64,
+    64
+  ],
+  "lr": 0.0009371646861427245,
+  "batch_size": 16,
+  "use_importance_weights": true,
+  "n_pref_samples": 0,
+  "n_demo_samples": 0,
+  "n_rating_samples": 64,
+  "n_stop_samples": 256,
+  "_meta": {
+    "best_trial_number": 43,
+    "best_trial_value": 2.6594569048233674,
+    "per_seed_values": [
+      1.305785507499379e-15,
+      0.0,
+      -5.148492083118017,
+      0.0,
+      7.944286369164358,
+      7.944286369164358,
+      0.0,
+      0.0,
+      0.0,
+      7.944286369164358,
+      7.944286369164358,
+      7.944286369164358,
+      -8.437694987151193e-16
+    ],
+    "sample_counts": {
+      "n_pref_samples": 0,
+      "n_demo_samples": 0,
+      "n_rating_samples": 64,
+      "n_stop_samples": 256
+    },
+    "subset": "rating_stop",
+    "active_modalities": [
+      "rating",
+      "stop"
+    ]
+  }
+}

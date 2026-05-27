@@ -1,0 +1,1 @@
+python -m rl_zoo3.train --algo dqn --env MountainCar-v0 -n 200000
